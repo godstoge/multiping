@@ -51,6 +51,8 @@ Modes
 * Lag help-funksjon --help -h /?
 * Vurder santization på input
 * Implementer upstream funksjon
+* Implementer input fil -input 
+* Fargekoding? Er det mulig? (Timeout kan være rød)
 '''
 
 
