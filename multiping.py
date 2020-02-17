@@ -46,13 +46,20 @@ Modes
 
 # TODO LIST
 '''
-* Legg til timestamp på start og intermediate headers 
-* Tidy og dokumenter kode
+* Legg til timestamp på start og intermediate headers. Legg til en kolonne med sek+ms  (ss.nn). De gir nok insights  
+* Tidy og dokumenter kode - More documentation the better
+* Lag en result-summary etter stopp (Ala ordinær ping)
+* Lag binary 
+* Gjor om så IP som pinges faktisk er samme some gethostnameaddr-thingy, i fall round robin DNS.
 * Lag help-funksjon --help -h /?
 * Vurder santization på input
 * Implementer upstream funksjon
 * Implementer input fil -input 
 * Fargekoding? Er det mulig? (Timeout kan være rød)
+* OPT: 
+ - Implementer --debug function som viser ip/FQDN, thread name/ID, loop counts og all annen fornuftig info
+ - Implementer -c/--count for antall pings
+
 '''
 
 
@@ -89,10 +96,10 @@ def pingworker(pingarg,pingid):
 def main():
 
     # Print header
-    print("\n\n __  __ _   _ _  _____ ___ ___ ___ _  _  ___ ")
-    print("|  \/  | | | | ||_   _|_ _| _ \_ _| \| |/ __|")
-    print("| |\/| | |_| | |__| |  | ||  _/| || .` | (_ |")
-    print("|_|  |_|\___/|____|_| |___|_| |___|_|\_|\___|      (" + version + " by " + author + ")\n\n")
+    print("\n\n     __  __ _   _ _  _____ ___ ___ ___ _  _  ___ ")
+    print("    |  \/  | | | | ||_   _|_ _| _ \_ _| \| |/ __|")
+    print("    | |\/| | |_| | |__| |  | ||  _/| || .` | (_ |")
+    print("    |_|  |_|\___/|____|_| |___|_| |___|_|\_|\___|      (" + version + " by " + author + ")\n\n")
     
     #print("Number of args:",len(sys.argv[1:])) # Debug. Forste argument er self (.py), sa regn kun fra argument 2 og utover.
     
@@ -114,11 +121,15 @@ def main():
     for header in headerlist:
         headerlisttrunc.append((header[:14] + '..') if len(header) > 16 else header)
         headerlistresolved.append("("+socket.gethostbyname(header)+")")
-    
+    msint=str(int(round(time.time() * 1000)))
+    ms=msint[-3:]
     # Print header 
+    print(time.strftime("%Y-%m-%d %H:%M:%S"))
     print(coloumns.format(*headerlisttrunc))
     print(coloumns.format(*headerlistresolved))
     print("+---------------+"*len(sys.argv[1:]))
+    
+    
     
     
     while 1:
