@@ -50,12 +50,13 @@ v0.1-19feb2020, Gos, Laget kolonne for timestamp og ryddet i koden
         * Tidy og dokumenter kode - More documentation the better
 * Lag en argument parser, --targets --t 
 * Gjor om så IP som pinges faktisk er samme some gethostnameaddr-thingy, i fall round robin DNS. (Den kan ha både headerresolved, og targetlist i stedet for syv.arghs)
+* Implementer upstream funksjon
 * Lag en result-summary etter stopp (Ala ordinær ping)
 * Lag binary 
 
 * Lag help-funksjon --help -h /?
 * Vurder santization på input
-* Implementer upstream funksjon
+
 * Implementer input fil -input 
 * Fargekoding? Er det mulig? (Timeout kan være rød)
 * OPT: 
