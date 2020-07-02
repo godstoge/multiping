@@ -130,7 +130,6 @@ def main():
     headerlisttrunc.append(time.strftime("%Y-%m-%d"))                          # Populerer display header med dato
     headerlistresolved.append(""+time.strftime("%H:%M:%S")+"")                 # Populerer display header med klokkeslett
     
-    
     # Truncate potensielle lange arguments (FQDN - f.eks.  http://thelongestlistofthelongeststuffatthelongestdomainnameatlonglast[.com)
     
     for header in headerlist:
