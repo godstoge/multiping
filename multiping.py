@@ -48,7 +48,7 @@ v0.1-19feb2020, Gos, Laget kolonne for timestamp og ryddet i koden
 ''' TODO LIST
         * Legg til timestamp på start og intermediate headers. Legg til en kolonne med sek+ms  (ss.nn). De gir nok insights  
         * Tidy og dokumenter kode - More documentation the better
-* Lag en argument parser, --targets --t 
+* Lag en argument parser, --targets --t (parserkode her: https://packetstormsecurity.com/files/156592/Microsoft-Exchange-2019-15.2.221.12-Remote-Code-Execution.html)
 * Gjor om så IP som pinges faktisk er samme some gethostnameaddr-thingy, i fall round robin DNS. (Den kan ha både headerresolved, og targetlist i stedet for syv.arghs)
 * Implementer upstream funksjon
 * Lag en result-summary etter stopp (Ala ordinær ping)
